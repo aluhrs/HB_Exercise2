@@ -1,5 +1,5 @@
 import random
-print "Hey You, What is your name?" 
+print "Hey you, what is your name?" 
 name = raw_input("Type your name: "), 
 print "Lets play a game." 
 print " %s, I am thinking of a number between 1 and 100. Try to guess my number" % name
@@ -9,7 +9,10 @@ your_guess = ""
 
 while generated_integer != your_guess:
 
-    your_guess = int(raw_input("Your Guess:"))
+    your_guess = int(raw_input("Your Guess: "))
+
+    #if your_guess != int(1, 100):
+        #print "Try again. Your answer must be a number."
 
     if your_guess == generated_integer:
         print "You Win!"
