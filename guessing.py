@@ -5,22 +5,23 @@ print "Lets play a game."
 print " %s, I am thinking of a number between 1 and 100. Try to guess my number" % name
 
 generated_integer = random.randint(1,100)
-your_guess = ""
 
-while generated_integer != your_guess:
+while True:
 
-    your_guess = int(raw_input("Your Guess: "))
+    your_guess = raw_input("Your Guess: ")
 
-    #if your_guess != int(1, 100):
-        #print "Try again. Your answer must be a number."
+    if not your_guess.isdigit():
+        print "Try again. Enter a number between 1 and 100."
 
-    if your_guess == generated_integer:
-        print "You Win!"
+    elif int(your_guess) < 1 or int(your_guess) > 100:
+        print "Try again. Enter a number between 1 and 100."
 
-    if your_guess < generated_integer:
+    elif int(your_guess) < generated_integer:
         print "You've guessed too low, guess again:"
 
-    elif your_guess > generated_integer:
+    elif int(your_guess) > generated_integer:
         print "You've guessed too high, guess again:"
 
-    
+    else:
+        print "You Win!"
+        break
