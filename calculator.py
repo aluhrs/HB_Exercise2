@@ -9,14 +9,29 @@ while True:
 
     if tokens[0] == "q":
         break
-     
-    if not tokens[1].isdigit() or not tokens[2].isdigit():
+
+    if len(tokens) > 2 and not tokens[1].isdigit():
         print "Please enter a number."
 
+    if len(tokens) > 2 and not tokens[2].isdigit():
+        print "Please enter a number."
+
+    if len(tokens) < 3 and tokens[0] != "square": # "cube"):
+        print """Please enter one of the following options:
+            Addition: + num num,
+            Subtraction: - num num, 
+            Multiplication: * num num,
+            Division: / num num, 
+            Square: square num,
+            Cube: cube num, 
+            Modulo: mod num num or 
+            Power: pow num num."""         
+   
     #addition
     elif tokens[0] == "+":    
         add = arithmetic.add(int(tokens[1]), int(tokens[2]))
         print add
+
     #subtraction
     elif tokens[0] == "-":    
         subtract = arithmetic.subtract(int(tokens[1]), int(tokens[2]))
@@ -53,5 +68,24 @@ while True:
         print mod
 
     else:
-            print "Please enter +, -, *, /, square, cube, mod, or pow."     
+        if len(tokens) == 1:
+            print """Please enter one of the following options:
+            Addition: + num num,
+            Subtraction: - num num, 
+            Multiplication: * num num,
+            Division: / num num, 
+            Square: square num,
+            Cube: cube num, 
+            Modulo: mod num num or 
+            Power: pow num num."""
+        else:
+            print """Please enter one of the following options:
+            Addition: + num num,
+            Subtraction: - num num, 
+            Multiplication: * num num,
+            Division: / num num, 
+            Square: square num,
+            Cube: cube num, 
+            Modulo: mod num num or 
+            Power: pow num num."""          
 
